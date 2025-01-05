@@ -1,0 +1,28 @@
+## maven installation from nromol user to all system wide user
+
+1. wget https://mirrors.estointernet.in/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+2. tar -xvf apache-maven-3.6.3-bin.tar.gz
+3. mv apache-maven-3.6.3 /opt/
+
+Step 2: Setting M2_HOME and Path Variables
+create maven.sh on /profile.d directory 
+M2_HOME='/opt/apache-maven-3.6.3'
+PATH="$M2_HOME/bin:$PATH"
+export PATH
+
+step 3 .  Add
+if [ -f /etc/profile.d/maven.sh ]; then
+    . /etc/profile.d/maven.sh
+fi
+
+at the end of /etc/profile file
+
+step 4 . Add
+M2_HOME='/opt/apache-maven-3.6.3'
+PATH="$M2_HOME/bin:$PATH"
+export PATH
+
+at the end of /etc/bash.bashrc file 
+
+
+ 
